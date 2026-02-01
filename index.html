@@ -51,7 +51,7 @@
        // document.querySelector('.number1').textContent=13;
     </script>
 </head>
-<body> 
+<body>
    <header>
         <h1>
             Guess my number!
@@ -68,14 +68,14 @@
     </header>
     <main>
         <section class="left">
-            <input type="number" class="guess"/>
+            <input type="number" id="txtGuess"/>
             <button class="btn check">
                 check!
             </button>
 
         </section>
         <section class="right">
-            <p class="message">
+            <p id="pnlMessage">
                 start guesting...
             </p>
             <p>
@@ -90,71 +90,6 @@
         </section>
     </main>
 
-    <script>
-        let score=20;
-        let highscore=0;
-    // console.log(document.querySelector(".message").textContent);
-
-    var sicret_number=Math.trunc(Math.random()*20)+1;
-    console.log(sicret_number)
-
-    document.querySelector(".message").textContent="wich number";
-        //document.querySelector('.number1').textContent=13;
-    //console.log(document.querySelector('.guess').value);
-       // document.querySelector('.guess').value=17;
-        
-        
-        document.querySelector('.check').addEventListener('click',function () 
-  {
-        const guess2 = Number(document.querySelector('.guess').value);
-        console.log(guess2,typeof guess2);
-        
-        if (!guess2)
-    {
-        document.querySelector('.message').textContent='NO NUMBER !'
-    }
-        else if (guess2===sicret_number)
-    {
-        document.querySelector('.message').textContent='congratulate'
-        document.querySelector("body").style.backgroundColor='green';
-        document.querySelector(".number1").style.width='30rem';
-        document.querySelector('.number1').textContent=sicret_number;
-        
-        if(score>highscore)
-    {
-        highscore=score;
-    }
-        document.querySelector('.highscore').textContent=highscore;
-    }
-        else if (guess2>sicret_number){
-            document.querySelector('.message').textContent='too high'
-            score--
-        }
-        else if (guess2<sicret_number){
-            document.querySelector('.message').textContent='too Low'
-            score--
-        }
-        if (score==0){
-
-            document.querySelector('.score').textContent='You are lost'
-        }
-        else
-             document.querySelector('.score').textContent=score;
-    });
-
-
-    document.querySelector('.again').addEventListener('click',function(){
-        score=20;
-        var sicret_number1=Math.trunc(Math.random()*20)+1;
-    console.log(sicret_number1)
-    document.querySelector('.message').textContent='start messaging ...'
-    //document.querySelector('.score').textContent=score;
-    document.querySelector('.number1').textContent='?'
-    document.querySelector('.guess').value='';
-    document.querySelector("body").style.backgroundColor='white'
-        sicret_number=sicret_number1;
- })
-    
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
